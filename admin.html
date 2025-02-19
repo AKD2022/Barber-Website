@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Add Available Dates</title>
+</head>
+<body>
+    <h2>Add Available Dates & Times</h2>
+
+    <label for="date">Select a Date:</label>
+    <input type="date" id="date">
+    
+    <br><br>
+
+    <label for="time">Add Available Time:</label>
+    <input type="time" id="time">
+    <button onclick="addTime()">Add Time</button>
+
+    <ul id="timeList"></ul>
+
+    <br>
+    <button onclick="saveToDatabase()">Save to Firebase</button>
+
+    <h1>Admin Panel - View Bookings</h1>
+    <div id="bookingsContainer">Loading bookings...</div>
+
+
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
