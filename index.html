@@ -3,42 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book a Haircut</title>
+    <link rel="stylesheet" href="homepage.css">
+    <title>BR Cuts</title>
 </head>
 <body>
-    <div class="body">
-        <div class="basic-info">
-            <form>
-                <p>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="user_name" required />
-                </p>
-                <p>
-                    <label for="mail">Email:</label>
-                    <input type="email" id="mail" name="user_email" required />
-                </p>
-                <p>
-                    <label for="number">Phone Number:</label>
-                    <input type="tel" id="number" name="user_number" required />
-                </p>
-            </form>
+    <div class="home">
+        <div class="headers">
+            <h2 id="first">SHARP CUTS</h2>
+            <h2 id="second">SHARP SAVINGS</h2>
         </div>
-        <div class="date-time">
-            <h2>Select a Date</h2>
-            <select id="dateSelect">
-                <option value="">Loading dates...</option>
-            </select>
-
-            <h2>Select a Time</h2>
-            <select id="timeSelect" disabled>
-                <option value="">Select a time</option>
-            </select>
+        <div class="btn">
+            <a class="book-btn" href="book.html">Book Now</a>
         </div>
-        <button id="bookButton">Book Appointment</button>
     </div>
 
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
-    <script src="book.js"></script>
+    <a href="admin.html">t</a>
+    
+    <script src="homepage.js"></script>
 </body>
 </html>
