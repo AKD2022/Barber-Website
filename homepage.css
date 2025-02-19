@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+body {
+    height: 100%;
+    padding: 20px;
+    font-family: "Quicksand", serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url(homepage-bg.webp);
+}
+
+.headers {
+    font-size: 5rem;
+    color: white;
+}
+
+.headers .h2 {
+    text-transform: capitalize;
+}
+
+.headers h2, .btn {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+
+.book-btn {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    text-align: center;
+    display: inline-block;
+    padding: 10px;
+    background-color: rgb(21, 119, 149);
+    border: 2px solid rgb(21, 119, 149);
+    cursor: pointer;
+    font-size: 15px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+    margin-bottom: 10px;
+}
+
+.btn:hover {
+    transition: .2s ease-in-out;
+    font-size: 20px;
+}
+
+
+
