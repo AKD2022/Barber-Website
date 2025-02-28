@@ -19,7 +19,7 @@ body {
 }
 
 .headers {
-    font-size: 5rem;
+    font-size: calc(4em + 1vw);
     color: white;
 }
 
@@ -58,6 +58,28 @@ body {
 .btn:hover {
     transition: .2s ease-in-out;
     font-size: 20px;
+}
+
+#adminlogin {
+    align-self: start;
+    display: flex;
+}
+
+#msg {
+    display: none;
+}
+
+
+@media (max-width: 1023px) {  
+    #msg {
+        display: block;
+        z-index: 100000;
+        color: white;
+    }
+
+    .home, a {
+        display: none;
+    }
 }
 
 

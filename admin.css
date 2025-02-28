@@ -1,0 +1,8 @@
+#body, #again {
+    display: none;
+}
+
+#authentication {
+    display: block;
+    z-index: 10000;
+}

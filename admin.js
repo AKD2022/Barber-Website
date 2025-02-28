@@ -107,3 +107,26 @@ function removeBooking(bookingId, bookingElement) {
             alert("Error removing booking. Please try again.");
         });
 }
+
+var authentication = document.getElementById("authentication");
+var booked = document.getElementById("body");
+var again = document.getElementById("again");
+var adminInput = document.getElementById('adminpw');
+var pw = "brcutzzadmin2025"; 
+
+
+adminInput.addEventListener('keydown', function(event) {
+    if (event.key === "Enter") {  
+        var adminpw = adminInput.value; 
+        console.log("Entered Password: " + adminpw);
+
+        if (adminpw === pw) {
+            booked.style.display = 'block';   
+            authentication.style.display = 'none'; 
+            again.style.display = 'none';
+        } else {
+            authentication.style.display = 'block'; 
+            again.style.display = 'block'; 
+        }
+    }
+});

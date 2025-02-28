@@ -120,5 +120,22 @@ select {
     padding: 10px;
 }
 
+#msg {
+    display: none;
+}
+
+@media (max-width: 1023px) {  
+    #msg {
+        display: block;
+        z-index: 100000;
+        color: white;
+    }
+
+    .choose {
+        display: none;
+    }
+}
+
+
 
 

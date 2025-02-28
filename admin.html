@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
     <title>Admin - Add Available Dates</title>
 </head>
 <body>
@@ -22,10 +23,18 @@
 
     <br>
     <button onclick="saveToDatabase()">Save to Firebase</button>
--->
+--> 
 
-    <h1>Admin Panel - View Bookings</h1>
-    <div id="bookingsContainer">Loading bookings...</div>
+    <div id="authentication">
+        <h2>Password: </h2><input type="password" id="adminpw">
+        <h2 id="again">Please Try again</h2>
+    </div>
+
+
+    <div class="body" id="body">
+        <h1>Admin Panel - View Bookings</h1>
+        <div id="bookingsContainer">Loading bookings...</div>
+    </div>
 
 
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
