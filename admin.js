@@ -14,6 +14,8 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
+
+/*
 let selectedTimes = [];
 
 function addTime() {
@@ -61,6 +63,7 @@ function saveToDatabase() {
 
 window.addTime = addTime;
 window.saveToDatabase = saveToDatabase;
+*/
 
 const bookingsRef = database.ref("bookings");
 
@@ -78,7 +81,7 @@ database.ref("bookings").on("value", (snapshot) => {
         const bookingElement = document.createElement("div");
         const complete = document.createElement("button");
 
-        bookingElement.textContent = `${booking.name} - ${booking.date} at ${booking.time}`;
+        bookingElement.textContent = `${booking.name} - ${booking.date} at ${booking.phone}`;
         complete.textContent = "Complete"; 
         complete.classList.add("complete-button");
 

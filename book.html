@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book a Haircut</title>
+    <link rel="stylesheet" href="book.css">
 </head>
+
 <body>
-    <div class="body">
+    <div class="choose">
+        <table class="types">
+            <tr>
+                <th id="appointmentHeader">Appointment
+                    <hr>
+                </th>
+            </tr>
+            <tr>
+                <th class="appointmentType"><button onclick="showHaircut('haircut')">Haircut</button></th>
+                <th class="arrow"><button onclick="showHaircut('haircut')"><i class="fa-solid fa-chevron-right fa-beat"></i></button></th>
+            </tr>
+
+            <tr>
+                <th class="appointmentType"><button onclick="showHaircut('h+w')">Haircut + Wash</button></th>
+                <th class="arrow"><button onclick="showHaircut('h+w')"><i class="fa-solid fa-chevron-right fa-beat"></i></button></th>
+            </tr>
+            <tr>
+                <th class="appointmentType"><button onclick="showHaircut('trim')">Trim/Lineup</button></th>
+                <th class="arrow"><button onclick="showHaircut('trim')"><i class="fa-solid fa-chevron-right fa-beat"></i></button></th>
+            </tr>
+        </table>
+    </div>
+
+    <div class="description">
+        <div id="description1">
+            <div class="haircutDetails">
+
+                <div class="title">Haircut</div>
+                <div class="details">
+                    <p>Price: $10</p>
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis,
+                        aliquid error amet consectetur dignissimos et eveniet nemo incidunt ipsam?.</p>
+                </div>
+                <button class="select" onclick="showBook()">Select</button>
+            </div>
+        </div>
+
+        <div id="description2">
+            <div class="haircutDetails">
+
+                <div class="title">Haircut + Wash</div>
+                <div class="details">
+                    <p>Price: $15</p>
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis,
+                        aliquid error amet consectetur dignissimos et eveniet nemo incidunt ipsam?.</p>
+                </div>
+                <button class="select"  onclick="showBook()">Select</button>
+            </div>
+        </div>
+
+        <div id="description3">
+            <div class="haircutDetails">
+                <div class="title">Trim/Lineup</div>
+                <div class="details">
+                    <p>Price: $8</p>
+                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis,
+                        aliquid error amet consectetur dignissimos et eveniet nemo incidunt ipsam?.</p>
+                </div>
+                <button class="select"  onclick="showBook()">Select</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="body">
         <div class="basic-info">
             <form>
                 <p>
@@ -25,20 +92,25 @@
         </div>
         <div class="date-time">
             <h2>Select a Date</h2>
+            <input type="date" id="datePicker">
+            <!--
             <select id="dateSelect">
-                <option value="">Loading dates...</option>
             </select>
-
             <h2>Select a Time</h2>
             <select id="timeSelect" disabled>
                 <option value="">Select a time</option>
             </select>
         </div>
+        -->
         <button id="bookButton">Book Appointment</button>
     </div>
 
+
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+
+    <script src="https://kit.fontawesome.com/4d72ef9868.js" crossorigin="anonymous"></script>
     <script src="book.js"></script>
 </body>
+
 </html>

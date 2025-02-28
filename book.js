@@ -15,13 +15,15 @@ const database = firebase.database();
 
 // Load available dates after DOM is ready
 document.addEventListener("DOMContentLoaded", function () {
-    loadAvailableDates();
+    //loadAvailableDates();
     const bookButton = document.getElementById("bookButton");
     if (bookButton) {
         bookButton.addEventListener("click", bookAppointment);
     }
 });
 
+
+/*
 function loadAvailableDates() {
     const dateSelect = document.getElementById("dateSelect");
     const timeSelect = document.getElementById("timeSelect");
@@ -40,7 +42,6 @@ function loadAvailableDates() {
         });
     });
     
-
     dateSelect.addEventListener("change", function () {
         timeSelect.innerHTML = "<option value=''>Loading times...</option>";
         timeSelect.disabled = true;
@@ -61,17 +62,28 @@ function loadAvailableDates() {
             });
         }
     });
-    
 }
+*/
+
+let dateSelected = "";
+
+document.getElementById("datePicker").addEventListener("change", function() {
+    dateSelected = this.value;
+    console.log("Selected Date:", dateSelected);
+});
+
+
+const haircut = "";
 
 function bookAppointment() {
     const name = document.getElementById("name")?.value;
     const email = document.getElementById("mail")?.value;
     const phone = document.getElementById("number")?.value;
-    const selectedDate = document.getElementById("dateSelect")?.value;
-    const selectedTime = document.getElementById("timeSelect")?.value;
+    //const selectedDate = document.getElementById("dateSelect")?.value;
+    const selectedDate = dateSelected;
+    //const selectedTime = document.getElementById("timeSelect")?.value;
 
-    if (!name || !email || !phone || !selectedDate || !selectedTime) {
+    if (!name || !email || !phone || !selectedDate /*|| !selectedTime*/) {
         alert("Please fill in all fields.");
         return;
     }
@@ -82,17 +94,16 @@ function bookAppointment() {
         email,
         phone,
         date: selectedDate,
-        time: selectedTime
+        //time: selectedTime
     }).then(() => {
-        removeTimeFromAvailable(selectedDate, selectedTime);
-
-        alert("Booking confirmed!");
+        //removeTimeFromAvailable(selectedDate, selectedTime);
+        alert("Booking confirmed! You will recieve a text to confirm your time!");
     }).catch(error => {
         alert("Error saving booking, please try again later");
     });
 }
 
-
+/*
 function removeTimeFromAvailable(date, time) {
     const dateRef = database.ref(`available_dates/${date}/times`);
 
@@ -114,4 +125,100 @@ function removeTimeFromAvailable(date, time) {
         }
     });
 }
+*/
 
+var desc1 = document.getElementById('description1');
+var desc2 = document.getElementById('description2');
+var desc3 = document.getElementById('description3');
+var form = document.getElementById('body');
+
+function showHaircut(haircut) {
+    if (haircut == "haircut") {
+        desc1.style.display = 'block'
+        desc1.style.transition = 'opacity 0.5s'
+        desc1.style.opacity = 0;
+        desc1.offsetHeight;
+        desc1.style.opacity = 1;
+        haircut = "haircut"
+
+        // close others
+        desc2.style.display = 'none'
+        desc2.style.transition = 'opacity 0.5s'
+        desc2.style.opacity = 1;
+        desc2.offsetHeight;
+        desc2.style.opacity = 0;
+
+        desc3.style.display = 'none'
+        desc3.style.transition = 'opacity 0.5s'
+        desc3.style.opacity = 1;
+        desc3.offsetHeight;
+        desc3.style.opacity = 0;
+
+        form.style.display = 'nonw'
+        form.style.transition = 'opacity 0.5s'
+        form.style.opacity = 1;
+        form.offsetHeight;
+        form.style.opacity = 0;
+    } else if (haircut == "h+w") {
+        desc2.style.display = 'block'
+        desc2.style.transition = 'opacity 0.5s'
+        desc2.style.opacity = 0;
+        desc2.offsetHeight;
+        desc2.style.opacity = 1;
+        haircut = "Haircut + Wash"
+
+        // close others
+        desc1.style.display = 'none'
+        desc1.style.transition = 'opacity 0.5s'
+        desc1.style.opacity = 1;
+        desc1.offsetHeight;
+        desc1.style.opacity = 0;
+
+        desc3.style.display = 'none'
+        desc3.style.transition = 'opacity 0.5s'
+        desc3.style.opacity = 1;
+        desc3.offsetHeight;
+        desc3.style.opacity = 0;
+
+        form.style.display = 'nonw'
+        form.style.transition = 'opacity 0.5s'
+        form.style.opacity = 1;
+        form.offsetHeight;
+        form.style.opacity = 0;
+    } else if (haircut == "trim") {
+        desc3.style.display = 'block'
+        desc3.style.transition = 'opacity 0.5s'
+        desc3.style.opacity = 0;
+        desc3.offsetHeight;
+        desc3.style.opacity = 1;
+        haircut = "Trim/Lineup"
+
+        // close others
+        desc2.style.display = 'none'
+        desc2.style.transition = 'opacity 0.5s'
+        desc2.style.opacity = 1;
+        desc2.offsetHeight;
+        desc2.style.opacity = 0;
+
+        desc1.style.display = 'none'
+        desc1.style.transition = 'opacity 0.5s'
+        desc1.style.opacity = 1;
+        desc1.offsetHeight;
+        desc1.style.opacity = 0;
+
+        form.style.display = 'nonw'
+        form.style.transition = 'opacity 0.5s'
+        form.style.opacity = 1;
+        form.offsetHeight;
+        form.style.opacity = 0;
+    }
+}  
+
+
+function showBook() {
+    form.style.display = 'block'
+    form.style.transition = 'opacity 0.5s'
+    form.style.opacity = 0;
+    form.offsetHeight;
+    form.style.opacity = 1;
+}
