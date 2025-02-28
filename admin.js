@@ -112,21 +112,26 @@ var authentication = document.getElementById("authentication");
 var booked = document.getElementById("body");
 var again = document.getElementById("again");
 var adminInput = document.getElementById('adminpw');
-var pw = "brcutzzadmin2025"; 
 
+document.getElementById("adminpw").addEventListener("keydown", async function(event) {
+    if (event.key === "Enter") {
+        const inputPassword = this.value;
 
-adminInput.addEventListener('keydown', function(event) {
-    if (event.key === "Enter") {  
-        var adminpw = adminInput.value; 
-        console.log("Entered Password: " + adminpw);
+        const response = await fetch("checkpw", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ password: inputPassword }),
+        });
 
-        if (adminpw === pw) {
-            booked.style.display = 'block';   
-            authentication.style.display = 'none'; 
-            again.style.display = 'none';
+        const data = await response.json();
+
+        if (data.success) {
+            console.log("Access Granted");
+            document.getElementById("body").style.display = "block";
         } else {
-            authentication.style.display = 'block'; 
-            again.style.display = 'block'; 
+            console.log("Access Denied");
+            document.getElementById("authentication").style.display = "block";
+            document.getElementById("again").style.display = "block";
         }
     }
 });
