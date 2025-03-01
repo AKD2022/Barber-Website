@@ -113,7 +113,7 @@ var booked = document.getElementById("body");
 var again = document.getElementById("again");
 var adminInput = document.getElementById('adminpw');
 
-document.getElementById("adminpw").addEventListener("keydown", async function(event) {
+adminInput.addEventListener("keydown", async function(event) {
     if (event.key === "Enter") {
         const inputPassword = this.value;
 

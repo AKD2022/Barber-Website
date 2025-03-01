@@ -2,7 +2,7 @@ export default function handler(req, res) {
     if (req.method === "POST") {
         const { password } = req.body;
 
-        const correctPassword = process.env.ADMIN_PW; // Stored securely in Vercel
+        const correctPassword = process.env.ADMIN_PW; 
 
         if (password === correctPassword) {
             return res.status(200).json({ success: true });
