@@ -117,7 +117,7 @@ document.getElementById("adminpw").addEventListener("keydown", async function(ev
     if (event.key === "Enter") {
         const inputPassword = this.value;
 
-        const response = await fetch("/api/checkpw", { // Call the backend API
+        const response = await fetch("/api/checkpw", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ password: inputPassword }),
@@ -128,6 +128,8 @@ document.getElementById("adminpw").addEventListener("keydown", async function(ev
         if (data.success) {
             console.log("Access Granted");
             document.getElementById("body").style.display = "block";
+            document.getElementById("authentication").style.display = "none";
+            document.getElementById("again").style.display = "none";
         } else {
             console.log("Access Denied");
             document.getElementById("authentication").style.display = "block";
