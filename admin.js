@@ -117,7 +117,7 @@ document.getElementById("adminpw").addEventListener("keydown", async function(ev
     if (event.key === "Enter") {
         const inputPassword = this.value;
 
-        const response = await fetch("checkpw", {
+        const response = await fetch("/api/checkpw", { // Call the backend API
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ password: inputPassword }),
@@ -135,3 +135,4 @@ document.getElementById("adminpw").addEventListener("keydown", async function(ev
         }
     }
 });
+
