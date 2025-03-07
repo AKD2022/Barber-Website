@@ -9,11 +9,107 @@
 </head>
 
 <body>
-    <h1 id="msg">Due to Maintanence, Mobile/Tablet use is not Available. Please open on computer.
-        Sorry For the Inconvinience!
-    </h1>
+    <!--Computer Choice-->
+    <div class="computerParent">
+        <div class="chooseComputer">
+            <table class="types">
+                <tr>
+                    <th id="appointmentHeader">Appointment
+                        <hr>
+                    </th>
+                </tr>
+                <tr>
+                    <th class="appointmentType"><button onclick="showHaircutComputer('haircut')">Haircut</button></th>
+                    <th class="arrow"><button onclick="showHaircutComputer('haircut')"><i class="fa-solid fa-chevron-right fa-beat" class="i"></i></button></th>
+                </tr>
 
-    <div class="choose">
+                <tr>
+                    <th class="appointmentType"><button onclick="showHaircutComputer('h+w')">Haircut + Wash</button></th>
+                    <th class="arrow"><button onclick="showHaircutComputer('h+w')"><i class="fa-solid fa-chevron-right fa-beat" class="i"></i></button></th>
+                </tr>
+                <tr>
+                    <th class="appointmentType"><button onclick="showHaircutComputer('trim')">Trim/Lineup</button></th>
+                    <th class="arrow"><button onclick="showHaircutComputer('trim')"><i class="fa-solid fa-chevron-right fa-beat" class="i"></i></button></th>
+                </tr>
+            </table>
+
+        </div>
+
+        <div class="description">
+            <div id="description1Computer">
+                <div class="haircutDetails">
+
+                    <div class="title">Haircut</div>
+                    <div class="details">
+                        <p>Price: $10</p>
+                        <p>Description: Fresh, stylish haircut tailored to your unique look, enhancing confidence with precision cuts and expert grooming techniques.</p>
+                    </div>
+                    <button class="select" onclick="showBook()">Select</button>
+                </div>
+            </div>
+
+            <div id="description2Computer">
+                <div class="haircutDetails">
+
+                    <div class="title">Haircut + Wash</div>
+                    <div class="details">
+                        <p>Price: $15</p>
+                        <p>Description: Revitalize your look with a stylish haircut and soothing wash, leaving you refreshed, confident, and ready to shine.</p>
+                    </div>
+                    <button class="select"  onclick="showBook()">Select</button>
+                </div>
+            </div>
+
+            <div id="description3Computer">
+                <div class="haircutDetails">
+                    <div class="title">Trim/Lineup</div>
+                    <div class="details">
+                        <p>Price: $8</p>
+                        <p>Description: Get a sharp trim and precise lineup, perfect for a clean, polished look that enhances your natural style.</p>
+                    </div>
+                    <button class="select"  onclick="showBook()">Select</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="bodyComputer">
+            <div class="basic-info">
+                <form>
+                    <p>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="user_name" required />
+                    </p>
+                    <p>
+                        <label for="mail">Email:</label>
+                        <input type="email" id="mail" name="user_email" required />
+                    </p>
+                    <p>
+                        <label for="number">Phone Number:</label>
+                        <input type="tel" id="number" name="user_number" required />
+                    </p>
+                </form>
+            </div>
+            <div class="date-time">
+                <h2>Select a Date</h2>
+                <input type="date" id="datePicker">
+                
+                <!--
+                <select id="dateSelect">
+                </select>
+                <h2>Select a Time</h2>
+                <select id="timeSelect" disabled>
+                    <option value="">Select a time</option>
+                </select>
+                -->
+            </div>
+            <button id="bookButton">Book Appointment</button>
+        </div> 
+    </div>
+
+
+    <!--Tablet Choice-->
+    <div class="chooseTablet">
         <table class="types">
             <tr>
                 <th id="appointmentHeader">Appointment
@@ -21,94 +117,353 @@
                 </th>
             </tr>
             <tr>
-                <th class="appointmentType"><button onclick="showHaircut('haircut')">Haircut</button></th>
-                <th class="arrow"><button onclick="showHaircut('haircut')"><i class="fa-solid fa-chevron-right fa-beat"></i></button></th>
+                <th class="appointmentType"><button onclick="showHaircutTablet('haircut')">Haircut</button></th>
+                <th class="arrow"><button onclick="showHaircutTablet('haircut')"><i class="fa-solid fa-chevron-down fa-beat" class="i"></i></button></th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="description1Tablet" class="descriptionTablet">
+                        <div class="haircutDetails">
+            
+                            <div class="title">Haircut</div>
+                            <div class="details">
+                                <p>Price: $10</p>
+                                <p>Description: Fresh, stylish haircut tailored to your unique look, enhancing confidence with precision cuts and expert grooming techniques.</p>
+                            </div>
+                            <button class="select" onclick="showBookTablet(1)">Select</button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div id="bodyTablet1" class="bTablet">
+                        <div class="basic-info">
+                            <form>
+                                <p>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="user_name" required />
+                                </p>
+                                <p>
+                                    <label for="mail">Email:</label>
+                                    <input type="email" id="mail" name="user_email" required />
+                                </p>
+                                <p>
+                                    <label for="number">Phone Number:</label>
+                                    <input type="tel" id="number" name="user_number" required />
+                                </p>
+                            </form>
+                        </div>
+                        <div class="date-time">
+                            <h2>Select a Date</h2>
+                            <input type="date" id="datePicker">
+                            
+                            <!--
+                            <select id="dateSelect">
+                            </select>
+
+                            <h2>Select a Time</h2>
+                            <select id="timeSelect" disabled>
+                                <option value="">Select a time</option>
+                            </select>
+                            -->
+                        </div>
+                        <button id="bookButtonTablet">Book Appointment</button>
+                    </div> 
+                </th>
             </tr>
 
             <tr>
-                <th class="appointmentType"><button onclick="showHaircut('h+w')">Haircut + Wash</button></th>
-                <th class="arrow"><button onclick="showHaircut('h+w')"><i class="fa-solid fa-chevron-right fa-beat"></i></button></th>
+                <th class="appointmentType"><button onclick="showHaircutTablet('h+w')">Haircut + Wash</button></th>
+                <th class="arrow"><button onclick="showHaircutTablet('h+w')"><i class="fa-solid fa-chevron-down fa-beat" class="i"></i></button></th>
             </tr>
             <tr>
-                <th class="appointmentType"><button onclick="showHaircut('trim')">Trim/Lineup</button></th>
-                <th class="arrow"><button onclick="showHaircut('trim')"><i class="fa-solid fa-chevron-right fa-beat"></i></button></th>
+        
+                <th>
+                    <div id="description2Tablet" class="descriptionTablet">
+                        <div class="haircutDetails">
+            
+                            <div class="title">Haircut + Wash</div>
+                            <div class="details">
+                                <p>Price: $15</p>
+                                <p>Description:Revitalize your look with a stylish haircut and soothing wash, leaving you refreshed, confident, and ready to shine.</p>
+                            </div>
+                            <button class="select"  onclick="showBookTablet(2)">Select</button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div id="bodyTablet2" class="bTablet">
+                        <div class="basic-info">
+                            <form>
+                                <p>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="user_name" required />
+                                </p>
+                                <p>
+                                    <label for="mail">Email:</label>
+                                    <input type="email" id="mail" name="user_email" required />
+                                </p>
+                                <p>
+                                    <label for="number">Phone Number:</label>
+                                    <input type="tel" id="number" name="user_number" required />
+                                </p>
+                            </form>
+                        </div>
+                        <div class="date-time">
+                            <h2>Select a Date</h2>
+                            <input type="date" id="datePicker">
+                            
+                            <!--
+                            <select id="dateSelect">
+                            </select>
+
+                            <h2>Select a Time</h2>
+                            <select id="timeSelect" disabled>
+                                <option value="">Select a time</option>
+                            </select>
+                            -->
+                        </div>
+                        <button id="bookButtonTablet">Book Appointment</button>
+                    </div> 
+                </th>
+            </tr>
+
+            <tr>
+                <th class="appointmentType"><button onclick="showHaircutTablet('trim')">Trim/Lineup</button></th>
+                <th class="arrow"><button onclick="showHaircutTablet('trim')"><i class="fa-solid fa-chevron-down fa-beat" class="i"></i></button></th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="description3Tablet" class="descriptionTablet">
+                        <div class="haircutDetails">
+                            <div class="title">Trim/Lineup</div>
+                            <div class="details">
+                                <p>Price: $8</p>
+                                <p>Description: Get a sharp trim and precise lineup, perfect for a clean, polished look that enhances your natural style.</p>
+                            </div>
+                            <button class="select"  onclick="showBookTablet(3)">Select</button>
+                        </div>
+                    </div>
+                </th>
+                <th>
+                    <div id="bodyTablet3" class="bTablet">
+                        <div class="basic-info">
+                            <form>
+                                <p>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="user_name" required />
+                                </p>
+                                <p>
+                                    <label for="mail">Email:</label>
+                                    <input type="email" id="mail" name="user_email" required />
+                                </p>
+                                <p>
+                                    <label for="number">Phone Number:</label>
+                                    <input type="tel" id="number" name="user_number" required />
+                                </p>
+                            </form>
+                        </div>
+                        <div class="date-time">
+                            <h2>Select a Date</h2>
+                            <input type="date" id="datePicker">
+                            
+                            <!--
+                            <select id="dateSelect">
+                            </select>
+
+                            <h2>Select a Time</h2>
+                            <select id="timeSelect" disabled>
+                                <option value="">Select a time</option>
+                            </select>
+                            -->
+                        </div>
+                        <button id="bookButtonTablet">Book Appointment</button>
+                    </div> 
+                </th>
             </tr>
         </table>
     </div>
 
-    <div class="description">
-        <div id="description1">
-            <div class="haircutDetails">
+    <!--Choose Mobile-->
+    <div class="chooseMobile">
+        <table class="types">
+            <tr>
+                <th id="appointmentHeader">Appointment
+                    <hr>
+                </th>
+            </tr>
+            <tr>
+                <th class="appointmentType"><button onclick="showHaircutMobile('haircut')">Haircut</button></th>
+                <th class="arrow"><button onclick="showHaircutMobile('haircut')"><i class="fa-solid fa-chevron-down fa-beat" class="i"></i></button></th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="description1Mobile" class="descriptionMobile">
+                        <div class="haircutDetails">
+            
+                            <div class="title">Haircut</div>
+                            <div class="details">
+                                <p>Price: $10</p>
+                                <p>Description: Fresh, stylish haircut tailored to your unique look, enhancing confidence with precision cuts and expert grooming techniques.</p>
+                            </div>
+                            <button class="select" onclick="showBookMobile(1)">Select</button>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="bodyMobile1" class="bMobile">
+                        <div class="basic-info">
+                            <form>
+                                <p>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="user_name" required />
+                                </p>
+                                <p>
+                                    <label for="mail">Email:</label>
+                                    <input type="email" id="mail" name="user_email" required />
+                                </p>
+                                <p>
+                                    <label for="number">Phone Number:</label>
+                                    <input type="tel" id="number" name="user_number" required />
+                                </p>
+                            </form>
+                        </div>
+                        <div class="date-time">
+                            <h2>Select a Date</h2>
+                            <input type="date" id="datePicker">
+                            
+                            <!--
+                            <select id="dateSelect">
+                            </select>
 
-                <div class="title">Haircut</div>
-                <div class="details">
-                    <p>Price: $10</p>
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis,
-                        aliquid error amet consectetur dignissimos et eveniet nemo incidunt ipsam?.</p>
-                </div>
-                <button class="select" onclick="showBook()">Select</button>
-            </div>
-        </div>
+                            <h2>Select a Time</h2>
+                            <select id="timeSelect" disabled>
+                                <option value="">Select a time</option>
+                            </select>
+                            -->
+                        </div>
+                        <button id="bookButtonMobile">Book Appointment</button>
+                    </div> 
+                </th>
+            </tr>
 
-        <div id="description2">
-            <div class="haircutDetails">
+            <tr>
+                <th class="appointmentType"><button onclick="showHaircutMobile('h+w')">Haircut + Wash</button></th>
+                <th class="arrow"><button onclick="showHaircutMobile('h+w')"><i class="fa-solid fa-chevron-down fa-beat" class="i"></i></button></th>
+            </tr>
+            <tr>
+        
+                <th>
+                    <div id="description2Mobile" class="descriptionMobile">
+                        <div class="haircutDetails">
+            
+                            <div class="title">Haircut + Wash</div>
+                            <div class="details">
+                                <p>Price: $15</p>
+                                <p>Description: Revitalize your look with a stylish haircut and soothing wash, leaving you refreshed, confident, and ready to shine.</p>
+                            </div>
+                            <button class="select"  onclick="showBookMobile(2)">Select</button>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="bodyMobile2" class="bMobile">
+                        <div class="basic-info">
+                            <form>
+                                <p>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="user_name" required />
+                                </p>
+                                <p>
+                                    <label for="mail">Email:</label>
+                                    <input type="email" id="mail" name="user_email" required />
+                                </p>
+                                <p>
+                                    <label for="number">Phone Number:</label>
+                                    <input type="tel" id="number" name="user_number" required />
+                                </p>
+                            </form>
+                        </div>
+                        <div class="date-time">
+                            <h2>Select a Date</h2>
+                            <input type="date" id="datePicker">
+                            
+                            <!--
+                            <select id="dateSelect">
+                            </select>
 
-                <div class="title">Haircut + Wash</div>
-                <div class="details">
-                    <p>Price: $15</p>
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis,
-                        aliquid error amet consectetur dignissimos et eveniet nemo incidunt ipsam?.</p>
-                </div>
-                <button class="select"  onclick="showBook()">Select</button>
-            </div>
-        </div>
+                            <h2>Select a Time</h2>
+                            <select id="timeSelect" disabled>
+                                <option value="">Select a time</option>
+                            </select>
+                            -->
+                        </div>
+                        <button id="bookButtonMobile">Book Appointment</button>
+                    </div> 
+                </th>
+            </tr>
 
-        <div id="description3">
-            <div class="haircutDetails">
-                <div class="title">Trim/Lineup</div>
-                <div class="details">
-                    <p>Price: $8</p>
-                    <p>Description: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis,
-                        aliquid error amet consectetur dignissimos et eveniet nemo incidunt ipsam?.</p>
-                </div>
-                <button class="select"  onclick="showBook()">Select</button>
-            </div>
-        </div>
+            <tr>
+                <th class="appointmentType"><button onclick="showHaircutMobile('trim')">Trim/Lineup</button></th>
+                <th class="arrow"><button onclick="showHaircutMobile('trim')"><i class="fa-solid fa-chevron-down fa-beat" class="i"></i></button></th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="description3Mobile" class="descriptionMobile">
+                        <div class="haircutDetails">
+                            <div class="title">Trim/Lineup</div>
+                            <div class="details">
+                                <p>Price: $8</p>
+                                <p>Description: Get a sharp trim and precise lineup, perfect for a clean, polished look that enhances your natural style.</p>
+                            </div>
+                            <button class="select"  onclick="showBookMobile(3)">Select</button>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+            <tr>
+                <th>
+                    <div id="bodyMobile3" class="bMobile">
+                        <div class="basic-info">
+                            <form>
+                                <p>
+                                    <label for="name">Name:</label>
+                                    <input type="text" id="name" name="user_name" required />
+                                </p>
+                                <p>
+                                    <label for="mail">Email:</label>
+                                    <input type="email" id="mail" name="user_email" required />
+                                </p>
+                                <p>
+                                    <label for="number">Phone Number:</label>
+                                    <input type="tel" id="number" name="user_number" required />
+                                </p>
+                            </form>
+                        </div>
+                        <div class="date-time">
+                            <h2>Select a Date</h2>
+                            <input type="date" id="datePicker">
+                            
+                            <!--
+                            <select id="dateSelect">
+                            </select>
+
+                            <h2>Select a Time</h2>
+                            <select id="timeSelect" disabled>
+                                <option value="">Select a time</option>
+                            </select>
+                            -->
+                        </div>
+                        <button id="bookMobileTablet">Book Appointment</button>
+                    </div> 
+                </th>
+            </tr>
+        </table>
+
     </div>
-
-
-    <div id="body">
-        <div class="basic-info">
-            <form>
-                <p>
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="user_name" required />
-                </p>
-                <p>
-                    <label for="mail">Email:</label>
-                    <input type="email" id="mail" name="user_email" required />
-                </p>
-                <p>
-                    <label for="number">Phone Number:</label>
-                    <input type="tel" id="number" name="user_number" required />
-                </p>
-            </form>
-        </div>
-        <div class="date-time">
-            <h2>Select a Date</h2>
-            <input type="date" id="datePicker">
-            <!--
-            <select id="dateSelect">
-            </select>
-            <h2>Select a Time</h2>
-            <select id="timeSelect" disabled>
-                <option value="">Select a time</option>
-            </select>
-        </div>
-        -->
-        <button id="bookButton">Book Appointment</button>
-    </div>
-
 
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
