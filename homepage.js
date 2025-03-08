@@ -1,3 +1,5 @@
+import { inject } from "@vercel/analytics"
+
 document.addEventListener("DOMContentLoaded", function () {
         setTimeout(() => {
             document.getElementById("first").style.opacity = "1";
