@@ -6,20 +6,20 @@ html {
     font-family: "Quicksand", serif;
     display: flex;
     flex-direction: row;    
+    overflow-y: scroll;
 }
+
 
 body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    background-attachment: fixed;
     background-image: 
-    linear-gradient(
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.7)
-    ),
-    url(homepage-bg.webp);
-    height: 100vh;
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+        url("homepage-bg.webp");
 }
+
 
 .computerParent {
     display: flex;
@@ -278,7 +278,9 @@ select {
 @media (max-width: 425px) {
     .chooseMobile table{
         font-size: 90%;
+        transform: translateY(-40px);
     }
+
 }
 
 @media (max-width: 389px) {
